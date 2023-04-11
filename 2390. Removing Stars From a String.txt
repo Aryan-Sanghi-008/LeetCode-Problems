@@ -1,0 +1,45 @@
+--> You are given a string s, which contains stars *.
+
+In one operation, you can:
+
+Choose a star in s.
+Remove the closest non-star character to its left, as well as remove the star itself.
+Return the string after all stars have been removed.
+
+Note:
+
+1. The input will be generated such that the operation is always possible.
+2. It can be shown that the resulting string will always be unique.
+
+
+Constraints:
+
+1. 1 <= s.length <= 105
+2. s consists of lowercase English letters and stars *.
+3. The operation above can be performed on s.
+
+
+Intuition - 1:
+
+-> We can create a stack to push the characters of the string (here, lowercase alphabets only).
+-> Traverse the whole string, whenever we get a lowercase alphabet, push that into the stack.
+-> Whenever we get a '*', pop the top element of the stack, if it is not empty.
+-> Create a string to get the remaining elements from the stack.
+-> Reverse the string.
+
+
+It is a beginner or a brute approach to solve the problem
+
+
+
+Intuition - 2:
+
+-> Create two integers for indexes (i and j, initially, both at 0).
+-> Traverse the whole string, whenever we get a lowercase alphabet, do s[j] = s[i], increment j;
+-> Whenever we get a '*', decrement j;
+-> return s.substr(0, j) as a string;
+
+
+This is a time and space optimised solution
+
+You can refer to the code of this explanation --> https://github.com/Aryan-Sanghi-008/LeetCode-Problems/blob/a61f30a0b5a7bd68e480ac0dff6b9df40fc4f49c/2390.%20Removing%20Stars%20From%20a%20String.cpp
